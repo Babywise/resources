@@ -17,6 +17,8 @@ This is the backend portion of the client-server template.
 ```
 server/
 ├── src/
+│   ├── config/             # Configuration files
+│   │   └── config.ts       # Centralized configuration
 │   ├── routes/             # API route handlers
 │   │   └── health.ts       # Health check endpoint
 │   ├── middleware/         # Custom Express middleware
@@ -33,12 +35,12 @@ server/
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `index.ts` | Server startup, graceful shutdown, signal handling |
-| `app.ts` | Express middleware stack and route mounting |
-| `middleware/middleware.ts` | Custom middleware (logging, auth, etc.) |
-| `routes/health.ts` | Health check endpoint for monitoring |
+| File                       | Purpose                                            |
+| -------------------------- | -------------------------------------------------- |
+| `index.ts`                 | Server startup, graceful shutdown, signal handling |
+| `app.ts`                   | Express middleware stack and route mounting        |
+| `middleware/middleware.ts` | Custom middleware (logging, auth, etc.)            |
+| `routes/health.ts`         | Health check endpoint for monitoring               |
 
 ## Scripts
 
@@ -54,17 +56,17 @@ npm run format     # Format with Prettier
 
 ## Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `PORT` | Server port | `3000` |
+| Variable   | Description | Default       |
+| ---------- | ----------- | ------------- |
+| `PORT`     | Server port | `3000`        |
 | `NODE_ENV` | Environment | `development` |
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/health` | Basic health check (for load balancers) |
-| GET | `/api/health` | Detailed health check with uptime |
+| Method | Endpoint      | Description                             |
+| ------ | ------------- | --------------------------------------- |
+| GET    | `/health`     | Basic health check (for load balancers) |
+| GET    | `/api/health` | Detailed health check with uptime       |
 
 ## Middleware Stack
 
