@@ -20,6 +20,10 @@ import eslintPerfectionist from "eslint-plugin-perfectionist";
 // import jestPackage from "jest/package.json" with { type: "json" };
 import vitest from "@vitest/eslint-plugin";
 
+
+  // Note: If you are still using tailwind v3 and want to use the ESLint plugin, add this to the package.json
+  // "eslint-plugin-tailwindcss": "^3.17.5",
+
 // Core Node Configuration
 const coreConfig = tseslint.config({
   files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
@@ -279,39 +283,39 @@ const typescriptConfig = tseslint.config({
 });
 
 // Tailwind Configuration
-const tailwindConfig = tseslint.config({
-  files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
-  ignores: [
-    "**/node_modules",
-    "**/dist",
-    "**/coverage",
-    "**/logs",
-    "**/*.config.*",
-    "**/*.json",
-    "**/*.setup.*",
-    "**/*.d.ts"
-  ],
-  extends: [...eslintPluginTailwind.configs["flat/recommended"]],
-  languageOptions: {},
-  plugins: {
-    tailwindcss: eslintPluginTailwind
-  },
-  settings: {
-    tailwindcss: {
-      version: 3
-    }
-  },
-  rules: {
-    /* Off Rules */
+// const tailwindConfig = tseslint.config({
+//   files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
+//   ignores: [
+//     "**/node_modules",
+//     "**/dist",
+//     "**/coverage",
+//     "**/logs",
+//     "**/*.config.*",
+//     "**/*.json",
+//     "**/*.setup.*",
+//     "**/*.d.ts"
+//   ],
+//   extends: [...eslintPluginTailwind.configs["flat/recommended"]],
+//   languageOptions: {},
+//   plugins: {
+//     tailwindcss: eslintPluginTailwind
+//   },
+//   settings: {
+//     tailwindcss: {
+//       version: 3
+//     }
+//   },
+//   rules: {
+//     /* Off Rules */
 
-    "tailwindcss/classnames-order": ["off"], // (off) Disables `tailwindcss/classnames-order` rule; may conflict with ESLint // "warn" enforces Tailwind class order
-    "tailwindcss/migration-from-tailwind-2": ["off"] // (off) Disables migration helper from Tailwind v2 to v3 // "warn" enables migration hints
+//     "tailwindcss/classnames-order": ["off"], // (off) Disables `tailwindcss/classnames-order` rule; may conflict with ESLint // "warn" enforces Tailwind class order
+//     "tailwindcss/migration-from-tailwind-2": ["off"] // (off) Disables migration helper from Tailwind v2 to v3 // "warn" enables migration hints
 
-    /* Warning Rules */
+//     /* Warning Rules */
 
-    /* Error Rules */
-  }
-});
+//     /* Error Rules */
+//   }
+// });
 
 // Styling (Prettier, Import, and Perfectionist) Configuration
 const stylingConfig = tseslint.config({
@@ -782,7 +786,7 @@ export default tseslint.config(
   ...coreConfig,
   ...reactConfig,
   ...typescriptConfig,
-  ...tailwindConfig,
+  //...tailwindConfig,
   ...stylingConfig,
   ...securityConfig,
   ...jsDocConfig,

@@ -29,7 +29,7 @@ function App() {
       <div className="flex flex-col items-center justify-center text-center">
         <h1 className="text-3xl font-bold">Vite + React</h1>
         <button
-          className="my-2 rounded bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700"
+          className="my-2 rounded-sm bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700"
           onClick={() => {
             const incrementValue = 1;
             setCount(prevCount => prevCount + incrementValue);
