@@ -18,7 +18,9 @@ This is the frontend portion of the client-server template.
 client/
 ├── src/
 │   ├── components/         # Reusable UI components
-│   │   └── ErrorBoundary/  # Error boundary for catching React errors
+│   ├── hooks/              # Reusable hooks
+│   ├── stores/             # Reusable stores
+│   ├── utils/              # Utility functions
 │   ├── pages/              # Page components (one folder per page)
 │   │   ├── HomePage/       # Landing page
 │   │   ├── AppPage/        # Main app page with server status
@@ -36,12 +38,12 @@ client/
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `vite.config.ts` | Dev server, build settings, proxy to backend |
-| `eslint.config.js` | Linting rules for React + TypeScript |
-| `index.css` | Theme variables (colors, spacing, etc.) |
-| `App.tsx` | Route definitions and error boundary |
+| File               | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| `vite.config.ts`   | Dev server, build settings, proxy to backend |
+| `eslint.config.js` | Linting rules for React + TypeScript         |
+| `index.css`        | Theme variables (colors, spacing, etc.)      |
+| `App.tsx`          | Route definitions and error boundary         |
 
 ## Scripts
 
@@ -57,11 +59,11 @@ npm run format     # Format with Prettier
 
 ## Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `VITE_API_URL` | Backend API URL | `http://localhost:3000` |
-| `VITE_DEV_PORT` | Dev server port | `5173` |
-| `VITE_PREVIEW_PORT` | Preview server port | `4173` |
+| Variable            | Description         | Default                 |
+| ------------------- | ------------------- | ----------------------- |
+| `VITE_API_URL`      | Backend API URL     | `http://localhost:3000` |
+| `VITE_DEV_PORT`     | Dev server port     | `5173`                  |
+| `VITE_PREVIEW_PORT` | Preview server port | `4173`                  |
 
 ## Features
 
